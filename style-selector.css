@@ -1,0 +1,85 @@
+
+body {
+  position: relative;
+  background-color: #eee;
+  font-family: 'Microsoft JhengHei';
+}
+
+.flex {
+  display: flex;
+}
+
+.title{
+  text-align: center;
+  font-size: 2rem;
+}
+b {
+  font-size: 0.8rem;
+  text-align: right;
+  display: block;
+}
+strong {
+  font-size: 0.8rem;
+  background-color: #fff;
+  color: red;
+  padding: 0 5px;
+  margin: 5px;
+}
+/* 題目框設計 */
+.box {
+  /*     height: 200px; */
+  margin: 50px;
+}
+
+.box > div {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+.box > div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box > div:last-child {
+  background-color: #32bfb2;
+  color: #fff;
+}
+
+.box h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: ;
+}
+
+.box h3 {
+  font-size: 1.2rem;
+}
+.box ol {
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+/* 電梯 */
+.btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.btn.flex {
+  flex-direction: column;
+}
+
+.btn > a {
+  text-decoration: none;
+  text-align: center;
+  color: #fff!IMPORTANT;
+  background-color: #000;
+  border-bottom: 1px solid #ddd;
+  padding: 2px 5px;
+  font-size: 14px;
+  margin: 2px;
+}
+.btn > a:hover {
+  background-color: #333;
+}
