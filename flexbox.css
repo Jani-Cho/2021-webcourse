@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h2 {
+  text-align: center;
+  margin: 10px;
+}
+
+.container {
+  /*   border: 1px solid #000; */
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  padding: 10px;
+}
+
+.box {
+  width: 500px;
+  height: 100%;
+  border: 1px solid #616161;
+  border-radius: 3px;
+  margin: 0 10px;
+  display: flex;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  margin: 2px;
+  color: white;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item:first-child,
+.item:nth-child(6){
+  background-color: #ff0021;
+}
+.item:nth-child(2),
+.item:nth-child(7){
+  background-color: #ef9810;
+}
+.item:nth-child(3),
+.item:nth-child(8){
+  background-color: #2398ff;
+}
+.item:nth-child(4),
+.item:nth-child(9){
+  background-color: #129922;
+}
+
+.circle .item {
+  border-radius: 50%;
+}
+.q1 .sample {
+  justify-content: center;
+  align-items: center;
+}
+
+.q2 .sample {
+  justify-content: space-between;
+}
+
+.q3 .sample {
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.q4 .sample {
+  justify-content: center;
+  align-items: center;
+}
+
+.q5 .sample {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.q6 .sample {
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.q7 .sample {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.q8 .sample {
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.q9 .sample {
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.q10 .sample {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.q11 .sample {
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.q12 .item {
+  height: unset;
+}
+.q12 .sample {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.q13 .item {
+  width: unset;
+}
+.q13 .sample {
+  flex-direction: column-reverse;
+  align-items: stretch;
+}
+
+
+.q14 .sample {
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.q15 .sample {
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.q16 .sample {
+  flex-wrap: wrap;
+  align-content: start;
+}
+
+.q17 .sample {
+  flex-wrap: wrap-reverse;
+  align-content: start;
+
+}
+
+.q18 .sample {
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.q19 .item{
+  height: unset;
+}
+.q19 .sample {
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+.q20 .item{
+  height: unset;
+}
+.q20 .sample {
+  flex-wrap: wrap;
+  align-content: space-around;
+}
