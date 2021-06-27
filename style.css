@@ -1,0 +1,165 @@
+
+*, body {
+    font-family: "Century Gothic" !important;
+    box-sizing: border-box;
+}
+body{
+    padding: 75px 25px;
+}
+
+.page-width {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.header{
+    margin-bottom: 50px;
+}
+
+.title{
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.form{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form_box{
+    margin-bottom: 60px;
+}
+.required{
+    color: red;
+    padding-left: 3px;
+}
+.label{
+    display: block;
+    margin: 0 0 7px!important;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.input,
+.textarea{
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 10px 15px;
+    border: 1px solid #DBDBDB;
+    outline: 0!important;
+    color: #111111 ;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.textarea{
+    height: 100px;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+.select{
+    position: relative;
+}
+
+.select:after{
+    content: '▾';
+    position: absolute;
+    bottom: 30px;
+    right: 15px;
+    transform: translateY(50%);
+    z-index: -1;
+}
+
+.notes{
+    color: #828282;
+    font-size: 12px ;
+    margin: 10px 0;
+}
+.link{
+    position: relative;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    color:#000;
+}
+
+.link:after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    border-bottom: 2px solid #000;
+    transition: width 0.5s ease;
+}
+
+.link:hover:after{
+    width: 100%;
+}
+
+.checkbox{
+    position: relative;
+    z-index: -1;
+    margin: 0;
+    margin-right: 10px;
+}
+.checkbox:before{
+    content: "";
+    position: absolute;
+    display: block;
+    border: 1px solid #bfbfbf;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 0;
+    background-color: #fff;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.checkbox::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #4e4e4e;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+.checkbox:checked::after{
+    opacity: 1;
+}
+.checkbox + .label{
+    display: inline-block;
+}
+.file{
+    opacity: 0;
+}
+
+.btn{
+    display: block;
+    float: right;
+    margin: 5px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #2656D1;
+    color: #fff;
+    cursor: pointer;
+}

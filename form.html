@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+  <!-- <script src="./form.js"></script> -->
+
+  <link href="https://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans" media="all">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
+    integrity="undefined" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <title>表單測試</title>
+</head>
+
+<body>
+  <div class="page-width">
+    <header class="header">
+      <h1 class="title">Technical Support</h1>
+    </header>
+    <div class="form">
+
+      <div class="form_box">
+        <label class="label" for="email">Your Email <span class="required">*</span></label>
+        <input id="email" type="email" class="input" placeholder="" required="required">
+      </div>
+      <div class="form_box">
+        <label class="label" for="name">Full Name<span class="required">*</span></label>
+        <input id="name" type="text" class="input" placeholder="" required="required">
+      </div>
+      <div class="form_box">
+        <label class="label" for="country">Country<span class="required">*</span></label>
+        <input id="country" type="text" class="input" placeholder="" required="required">
+      </div>
+      <div class="form_box select">
+        <label class="label" for="product">SELECT THE PRODUCT YOU NEED HELP WITH<span class="required">*</span></label>
+        <select class="input " name="" id="product" required="required">
+          <option value="-" selected="selected">-</option>
+
+          <option value="Meshlicious - White">Meshlicious - White</option>
+
+          <option value="Meshlicious - Black">Meshlicious - Black</option>
+
+          <option value="Mesh side panel">Mesh side panel</option>
+
+          <option value="Tempered glass side panel">Tempered glass side panel</option>
+
+          <option value="PCIe riser cable">PCIe riser cable</option>
+
+          <option value="HDMI cable">HDMI cable</option>
+
+          <option value="DP cable">DP cable</option>
+
+        </select>
+      </div>
+      <div class="form_box">
+        <label class="label" for="serialNumber">Serial Number</label>
+        <input id="serialNumber" type="text" class="input" placeholder="" required="required">
+        <p class="notes">Enter your product's serial number, and upload a photo of the serial number label using the
+          attachment function below.</p>
+      </div>
+      <div class="form_box select">
+        <label class="label" for="computerOperatingSystem"> Computer Operating System</label>
+        <select class="input " name="" id="computerOperatingSystem" required="required">
+
+          <option value="-" selected="selected">-</option>
+
+          <option value="Windows">Windows</option>
+
+          <option value="Mac OS">Mac OS</option>
+
+          <option value="IOS">IOS</option>
+
+          <option value="Android">Android</option>
+
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form_box">
+        <label class="label" for="specifications">System Specifications (Operating System Version, Motherboard,
+          Graphics Card)</label>
+        <textarea id="specifications" class="textarea" placeholder=" "></textarea>
+        <p class="notes">Include both manufacturer and model of parts, where possible
+        </p>
+      </div>
+      <div class="form_box">
+        <label class="label" for="subject">Subject<span class="required">*</span></label>
+        <input id="subject" type="text" class="input" placeholder="" required="required">
+      </div>
+      <div class="form_box">
+        <label class="label" for="description">Description<span class="required">*</span></label>
+        <textarea id="description" class="textarea" placeholder=" "></textarea>
+        <p class="notes">Please enter the details of your request. A member of our support staff will respond as soon as
+          possible.
+        </p>
+      </div>
+
+      <div class="form_box">
+        <label class="label" for=""> I accept Ssupd 's <a href="https://ssupd.com/pages/terms-and-conditions"
+            class="link" target="blank">Terms of Use</a> and I confirm that I am 16 years of age or older.</label>
+
+        <input class="checkbox " type="checkbox" value="I accept" id="accept">
+        <label class="label" for="accept">I accept</label>
+      </div>
+      <form action="https://script.google.com/macros/s/AKfycbxn3SUvAUPmMPkLNVYmC2oqmZ5fxti3vs_a_qk8-reI_-5d3h9VWDabRlfPHb4jutqC/exec" id="form" method="post">
+        <div id="data"></div>
+        <label class="label" for="uploadfile"><i class="fas fa-paperclip"></i>Attach File</label>
+        <input name="file" id="uploadfile" type="file" class="file">
+        <button id="uploadBtn">Upload</button>
+      </form>
+
+      <div class="form_box">
+        <input id="submit" type="submit" class="btn">
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+</body>
+<script>
+
+  let sendButton = $('#sendButton')
+  let uploadFile = $('#uploadfile')
+
+  uploadFile.on("change", function() {
+        var file = this.files[0];
+        var fr = new FileReader();
+        fr.fileName = file.name;
+        fr.onload = function(e) {
+            e.target.result
+            html = '<input type="hidden" name="data" value="' + e.target.result.replace(/^.*,/, '') + '" >';
+            html += '<input type="hidden" name="mimetype" value="' + e.target.result.match(/^.*(?=;)/)[0] + '" >';
+            html += '<input type="hidden" name="filename" value="' + e.target.fileName + '" >';
+            $("#data").empty().append(html);
+        }
+        fr.readAsDataURL(file);
+
+  });
+
+  function send() {
+    let email = $('#email').val()
+    let name = $('#name').val()
+    let country = $('#country').val()
+    let product = $('#product').val()
+    let serialNumber = $('#serialNumber').val()
+    let computerOperatingSystem = $('#computerOperatingSystem').val()
+    let specifications = $('#specifications').val()
+    let subject = $('#subject').val()
+    let description = $('#description').val()
+
+    $.ajax({
+      url: "https://script.google.com/macros/s/AKfycbznM8Zk5BJff3MJDk_SUnb7ufGWo_N-_Cm78I6Qy8OdT7IOBPAHQa7_5y7PnZBkDFtB/exec",
+      data: {
+        "email": email,
+        "name": name,
+        "country": country,
+        "product": product,
+        "serialNumber": serialNumber,
+        "computerOperatingSystem": computerOperatingSystem,
+        "specifications": specifications,
+        "subject": subject,
+        "description": description,
+        "attachFile": blob
+      },
+      success: function (response) {
+        if (response == "成功") {
+          alert("成功");
+        }
+      },
+    });
+  };
+
+
+  sendButton.click(function () {
+    send();
+  })
+
+</script>
+
+</html>
