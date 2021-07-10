@@ -1,0 +1,606 @@
+/* 題目框設計 */
+.step{
+  padding: 20px;
+}
+b{
+  background: pink;
+  padding: 3px;
+}
+.flex{
+  display: flex;
+}
+body{
+  position: relative;
+}
+.btn{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+.btn .flex{
+  flex-direction: column;
+}
+.flex > a{
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  background-color: pink;
+  border-bottom: 1px solid #ddd;
+  padding: 2px 10px;
+  font-size: 14px;
+}
+.flex > a:hover{
+  background-color: #000;
+}
+.flex > a:active{
+  background-color: #000;
+}
+.flex > div{
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #333;
+  margin: 10px;
+}
+
+/* 範例設計 */
+/* 1 */
+.grid_ex > div {
+ background: #eee;
+ border: 1px solid #000;
+ padding: 10px;
+}
+/* 2 */
+.grid_ex.bg > div:nth-child(odd) {
+ background: #ddd;
+}
+/* 3 */
+.grid_ex{
+  display: grid;
+}
+.grid_ex.two {
+ grid-template-columns: 70% 30%; 
+}
+/* 4 */
+.grid_ex.three {
+ grid-template-columns: 1fr 1fr 1fr; 
+  /*   grid-template-columns: repeat(3, 1fr); */
+}
+/* 5 */
+.grid_ex.margin > div{
+  margin: 0.5em;
+}
+/* 6 */
+.grid_ex.gap {
+ grid-gap: 1em; 
+}
+/* 7 */
+.grid_ex.height, .grid.height {
+ grid-template-columns: repeat(3 ,1fr);
+ grid-gap: 1em; 
+}
+.grid_ex.min{
+  grid-auto-rows: 100px;
+}
+/* 8 */
+.grid_ex.min.max{
+  grid-auto-rows: minmax(100px, auto);
+}
+
+
+
+
+/* 9 */
+.boxs{
+  grid-auto-rows: minmax(200px, auto);
+  grid-auto-columns: minmax(auto, 200px);
+  grid-gap: .5em;
+  
+}
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+.grid_ex.far .box_1{
+  grid-column: 3;
+  grid-row: 3;
+}
+.grid_ex.far .box_2{
+  grid-column: 2;
+  grid-row: 2;
+}
+.grid_ex.far .box_3{
+  grid-column: 1;
+  grid-row: 3;
+}
+.grid_ex.far .box_4{
+  grid-column: 2;
+  grid-row: 1;
+}
+.grid_ex.far .box_5{
+  grid-column: 3;
+  grid-row: 2;
+}
+.grid_ex.far .box_6{
+  grid-column: 1;
+  grid-row: 2;
+}
+.grid_ex.far .box_7{
+  grid-column: 3;
+  grid-row: 1;
+}
+.grid_ex.far .box_8{
+  grid-column: 1;
+  grid-row: 1;
+}
+.grid_ex.far .box_9{
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* 10 */
+.fav.boxs .box{
+  color: ghostwhite;
+}
+.grid_ex.fav .box_1{
+  grid-column: 2;
+  grid-row: 2;
+  background-color: forestgreen;
+}
+.grid_ex.fav .box_2{
+  grid-column: 3;
+  grid-row: 1;
+  background-color: olive;
+  
+}
+.grid_ex.fav .box_3{
+  grid-column: 3;
+  grid-row: 2;
+  background-color: chocolate;
+  
+}
+.grid_ex.fav .box_4{
+  grid-column: 1;
+  grid-row: 2;
+  background-color: dimgray;
+  
+}
+.grid_ex.fav .box_5{
+  grid-column: 1;
+  grid-row: 3;
+  background-color: darkviolet;
+}
+.grid_ex.fav .box_6{
+  grid-column: 1;
+  grid-row: 1;
+  background-color: turquoise;
+}
+.grid_ex.fav .box_7{
+  grid-column: 3;
+  grid-row: 3;
+  background-color: gold;
+}
+.grid_ex.fav .box_8{
+  grid-column: 2;
+  grid-row: 1;
+  background-color: crimson;
+}
+.grid_ex.fav .box_9{
+  grid-column: 2;
+  grid-row: 3;
+  background-color: peachpuff;
+}
+
+/* 11 */
+.grid_ex.fas .box_1{
+  grid-column: 1;
+  grid-row: 1/3;
+
+}
+.grid_ex.fas .box_2{
+  grid-column: 1/3;
+  grid-row: 3;
+}
+.grid_ex.fas .box_3{
+  grid-column: 2/4;
+  grid-row: 1;
+}
+.grid_ex.fas .box_4{
+  grid-column: 2/4;
+  grid-row: 2;
+}
+.grid_ex.fas .box_5{
+  grid-column: 3;
+  grid-row: 3;
+}
+
+ul{
+  display: flex;
+}
+ul > li{
+  list-style-type: none;
+  margin: 10px 20px;
+  position: relative;
+}
+ul > li:before{
+  content:'';
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: 7px;
+}
+ul > li:nth-child(1):before{
+  background-color: crimson;
+}
+ul > li:nth-child(2):before{
+  background-color: gold;
+}
+ul > li:nth-child(3):before{
+  background-color: peachpuff;
+}
+ul > li:nth-child(4):before{
+  background-color: forestgreen;
+}
+ul > li:nth-child(5):before{
+  background-color: turquoise;
+}
+ul > li:nth-child(6):before{
+  background-color: darkviolet;
+}
+ul > li:nth-child(7):before{
+  background-color: dimgray;
+}
+ul > li:nth-child(8):before{
+  background-color: chocolate;
+}
+ul > li:nth-chid(9):before{
+  background-color: olive;
+}
+
+
+.flex{
+  display: flex;
+}
+.item{
+  flex: 1;
+  display: flex;
+  border: 1px solid #eee;
+  margin: 20px;
+  padding: 20px;
+}
+.title{
+  margin: 20px;
+}
+b{
+  background-color: hotpink;
+  color: #fff;
+  padding: 3px 5px;
+}
+.clue{
+  display: inline;
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #eee;
+  color: lightslategray;
+}
+i{
+  color: brown;
+}
+.pokemon, .pokemons .pokemon{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #eee;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/* 皮卡丘 */
+.p01{
+  background-image: url('https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/105752572/android/sticker.png')!important;
+  
+}
+/* 胖丁 */
+.p02{
+  background-image: url('https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/105752562/android/sticker.png')!important;
+  
+}
+/* 可達鴨 */
+.p03{
+  background-image: url('https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/105752577/android/sticker.png')!important;
+  
+}
+/* 吉利蛋 */
+.p04{
+  background-image: url('https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/105752579/android/sticker.png')!important;
+  
+}
+/* 耿鬼 */
+.p05{
+  background-image: url('https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/105752560/android/sticker.png')!important;
+  
+}
+/* 喵喵 */
+.p06{
+  background-image: url('https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/105752566/android/sticker.png')!important;
+  
+}
+/* 鯉魚王 */
+.p07{
+  background-image: url('https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/105752567/android/sticker.png')!important;
+  
+}
+/* 大舌頭 */
+.p08{
+  background-image: url('https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/105752570/android/sticker.png')!important;
+  
+}
+/* 伊布 */
+.p09{
+  background-image: url('https://sdl-stickershop.line.naver.jp/stickershop/v1/sticker/105752571/android/sticker.png')!important;
+  
+}
+/* 寶貝球 */
+.p10{
+  background-image: url('https://lh3.googleusercontent.com/proxy/MtMTOUwmaCVT0AfxtfG6g3S4ea1Y1y912J6F5wNKViMMkUnLrEIC0-zL56U2V3KYUbLfk6DvrJooRoUQ3j3KeFt3kznEum8VPnXgPPM')!important;
+
+  
+}
+.f_01 .sp{
+  justify-content: space-between;
+}
+.f_02 .sp{
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+.f_03 .pokemon{
+}
+
+/* 14 */
+.pokemons .box_1{
+  grid-column: 1;
+  grid-row: 1;
+}
+.pokemons .box_2{
+  grid-column: 2;
+  grid-row: 1;
+  
+}
+.pokemons .box_3{
+  grid-column: 3;
+  grid-row: 1;
+  
+}
+.pokemons .box_4{
+  grid-column: 1;
+  grid-row: 2;
+  
+}
+.pokemons .box_5{
+  grid-column: 2;
+  grid-row: 2;
+}
+.pokemons .box_6{
+  grid-column: 3;
+  grid-row: 2;
+}
+.pokemons .box_7{
+  grid-column: 1;
+  grid-row: 3;
+}
+.pokemons .box_8{
+  grid-column: 2;
+  grid-row: 3;
+}
+.pokemons .box_9{
+  grid-column: 3;
+  grid-row: 3;
+}
+.pokemon{
+  display: flex;
+  align-self: flex-end;
+
+}
+
+.ex14.pokemons .p01{
+  grid-column: 2;
+  grid-row: 3;
+  align-self: start;
+}
+.ex14.pokemons .p02{
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: end;
+  align-self: center;
+}
+.ex14.pokemons .p03{
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  align-self: start;
+}
+.ex14.pokemons .p04{
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+}
+.ex14.pokemons .p05{
+  grid-column: 3;
+  grid-row: 3;
+}
+.ex14.pokemons .p06{
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+
+}
+.ex14.pokemons .p07{
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: end;
+  align-self: end;
+}
+.ex14.pokemons .p08{
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: center;
+}
+.ex14.pokemons .p09{
+  grid-column: 2;
+  grid-row: 1;
+  
+}
+
+/* 15 */
+.ex15.pokemons .p10{
+/*   請抓住 伊布 */
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  justify-self: start;
+  
+}
+.ex .salmon{
+  background-color: salmon;
+}
+.pr .lightskyblue{
+  background-color: lightskyblue;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.ex > div, .pr > div{
+  background-color: crimson;
+  color: #fff;
+  border: 1px solid #ddd;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+.pr > div{
+  background-color: steelblue;
+}
+.ex, .pr{
+  display: grid;
+}
+.ex01{
+  grid-template-columns: 100px 150px auto 80px 150px;
+}
+.ex02{
+  grid-template-columns: 20% 10% 25% 15% 30%;
+}
+
+.ex03{
+  grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+}
+
+.ex04{
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 1fr 2fr 3fr;
+}
+.exo5, .pr05{
+  width: 600px;
+}
+.ex05{
+  grid-template-columns: 100px 100px 100px 1fr 1fr;
+}
+.ex06, .pr06{
+  width: 1000px;
+}
+.ex06{
+  grid-template-columns: 120px 120px 120px 1fr 2fr;
+}
+.ex07{
+  grid-template-columns: repeat(2, 1fr 2fr);
+}
+.ex08, .pr08{
+  width: 750px;
+}
+.ex08{
+  grid-template-columns: 150px repeat(2, 1fr 2fr);
+}
+.ex09, .pr09{
+  width: 1200px;
+}
+.ex09{
+  grid-template-columns: repeat(2, 1fr 2fr 3fr);
+}
+.ex10 .box_1, .ex10 .box_5, .ex10 .box_9{
+  grid-column: 1;
+}
+.ex10 .box_2, .ex10 .box_6, .ex10 .box_7{
+  grid-column: 2;
+}
+.ex10 .box_3, .ex10 .box_4, .ex10 .box_8{
+  grid-column: 3;
+}
+.ex10 .box_1, .ex10 .box_4, .ex10 .box_6{
+  grid-row: 1;
+}
+.ex10 .box_9, .ex10 .box_2, .ex10 .box_8{
+  grid-row: 2;
+}
+.ex10 .box_3, .ex10 .box_7, .ex10 .box_5{
+  grid-row: 3;
+}
+
+.ex11, .pr11{
+  grid-template-columns: repeat(3, 1fr);
+}
+.ex11{
+  grid-gap: 1.5em;
+}
+.ex12{
+  grid-auto-rows: 120px;
+  grid-auto-flow: column;
+}
+.ex13 .box_1{
+  grid-column: 4/6;
+  grid-row: 2/4;
+}
+.ex13 .box_2{
+  grid-column: 1/2;
+  grid-row: 2/6;
+}
+.ex13 .box_3{
+  grid-column: 1/5;
+  grid-row: 1;
+  
+}
+.ex13 .box_4{
+  grid-column: 2/4;
+  grid-row: 2/5;
+  
+}
+.ex13 .box_5{
+  grid-column: 5/6;
+  grid-row: 1;
+  
+}
+.ex13 .box_6{
+  grid-column: 2/3;
+  grid-row: 5/6;
+  
+}
+.ex13 .box_7{
+  grid-column: 3/5;
+  grid-row: 5/6;
+  
+}
+.ex13 .box_8{
+  grid-column: 5/6;
+  grid-row: 4/6;
+  
+}
+.ex13 .box_9{
+  grid-column: 4/5;
+  grid-row: 4/5;
+  
+}
