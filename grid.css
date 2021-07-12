@@ -505,7 +505,7 @@ i{
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: 1fr 2fr 3fr;
 }
-.exo5, .pr05{
+.ex05, .pr05{
   width: 600px;
 }
 .ex05{
