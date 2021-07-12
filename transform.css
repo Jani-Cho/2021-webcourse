@@ -1,0 +1,247 @@
+.boxes{
+  border: 1px solid #000;
+}
+.cards{
+  display: flex;
+  justify-content: space-around;
+  height: 250px;
+}
+.card {
+  display: inline-block;
+  background: #fff;
+  padding: 15px;
+  min-width: 100px;
+
+}
+.card .box {
+  width: 100px;
+  height: 100px;
+  background: eee;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #ccc inset;
+}
+.card .box .fill {
+  background-image: url(https://jani-cho.github.io/laihaw/pokemon.jpg); 
+  background-size: 100px auto;
+  width: 100px;
+  height: 100px;
+/*   position: relative; */
+  border-radius: 50%;
+  opacity: .5;
+  box-shadow: 0 0 5px #ccc;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.card p {
+  margin: 25px 0;
+  font-size: 12px;
+  background-color: #eee;
+  padding: 3px;
+  text-align: center;
+  color: #333;
+}
+.card.center, .card.transition{
+  width: 500px;
+  height: 500px;
+/*   position: relative; */
+}
+.card.center.ex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card.transition.ex{
+  
+  position: relative;
+}
+
+.card.transition.ex .box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.dot{
+  width: 5px;
+  height: 5px;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+.ex .type_01{
+  width: 100px; 
+  height: 100px; 
+  background: red;
+
+}
+.ex .type_02{
+  width: 100px; 
+  height: 100px; 
+  background: red; 
+  border-radius: 50px;
+}
+.ex .type_05{
+  width: 0; 
+  height: 0; 
+  border-left: 50px solid blue;      
+  border-right: 50px solid yellow;     
+  border-bottom: 50px solid red;
+  border-top: 50px solid black;
+  
+
+  
+
+}
+.ex .type_06{
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;     
+    border-right: 50px solid transparent;    
+    border-bottom: 100px solid red;
+   border-top: none;
+
+}
+
+.ex .type_07{
+  width: 0; 
+  height: 0; 
+  border-left: 50px solid transparent; 
+  border-right: 50px solid transparent; 
+  border-top: 100px solid red;
+
+}
+.ex .type_08{
+  position: relative; 
+  width: 100px; 
+  height: 80px;
+
+}
+.ex .type_08:before,
+.ex .type_08:after{
+ position: absolute;
+  
+    content: ""; 
+    left: 50px; 
+    top: 0; 
+    width: 50px; height: 80px; 
+  background: red; 
+  -moz-border-radius: 50px 50px 0 0; 
+  border-radius: 50px 50px 0 0; 
+  -webkit-transform: rotate(-45deg); 
+  -moz-transform: rotate(-45deg); 
+  -ms-transform: rotate(-45deg); 
+  -o-transform: rotate(-45deg); 
+  transform: rotate(-45deg); 
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%; 
+  -ms-transform-origin: 0 100%; 
+  -o-transform-origin: 0 100%; 
+  transform-origin: 0 100%; 
+}
+.ex .type_08:after{
+left: 0; 
+  -webkit-transform: rotate(45deg); 
+  -moz-transform: rotate(45deg); 
+  -ms-transform: rotate(45deg); 
+  -o-transform: rotate(45deg); 
+  transform: rotate(45deg); 
+  -webkit-transform-origin: 100% 100%; 
+  -moz-transform-origin: 100% 100%; 
+  -ms-transform-origin: 100% 100%; 
+  -o-transform-origin: 100% 100%; 
+  transform-origin :100% 100%; 
+}
+.ex .type_09{
+  display:block; 
+  width: 126px; 
+  height: 160px; 
+  background-color: red; 
+  -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px; 
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+.ex .type_10{
+  width: 80px;
+
+height: 80px;
+
+border-radius: 50%;
+
+box-shadow: 15px 15px 0 0 red;
+
+
+}
+.ex .star{
+  margin: 50px 0; 
+  position: relative; 
+  display: block; 
+  color: red; 
+  width: 0px; 
+  height: 0px; 
+  border-right: 100px solid transparent; 
+  border-bottom: 70px solid red; 
+  border-left: 100px solid transparent; 
+  -moz-transform: rotate(35deg); 
+  -webkit-transform: rotate(35deg); 
+  -ms-transform: rotate(35deg); 
+  -o-transform: rotate(35deg); }
+}
+
+.ex .star:before { 
+  border-bottom: 80px solid red;
+  border-left: 30px solid transparent; 
+  border-right: 30px solid transparent; 
+  position: absolute; 
+  height: 0; 
+  width: 0; 
+  top: -45px; 
+  left: -65px; 
+  display: block; 
+  content: ''; 
+  -webkit-transform: rotate(-35deg); 
+  -moz-transform: rotate(-35deg); 
+  -ms-transform: rotate(-35deg); 
+  -o-transform: rotate(-35deg); 
+}
+
+
+.ex .star:after { 
+  position: absolute; 
+  display: block; 
+  color: red; 
+  top: 3px; 
+  left: -105px; 
+  width: 0px; 
+  height: 0px; 
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid red; 
+  border-left: 100px solid transparent; 
+  -webkit-transform: rotate(-70deg); 
+  -moz-transform: rotate(-70deg); 
+  -ms-transform: rotate(-70deg); 
+  -o-transform: rotate(-70deg); 
+  content: ''; 
+}
+
+
+.ex .arrow{
+  width: 80px; height: 80px;
+
+transform: rotate(-45deg);
+
+box-shadow: 25px 25px 0px 0 red;
+
+}
+
+.ex .water{
+
+border: 50px solid #e00;
+
+border-radius: 50px 0 50px 50px;
+
+transform: rotate(-45deg);
+
+}
