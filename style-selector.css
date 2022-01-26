@@ -64,7 +64,11 @@ strong {
 .btn {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 0;
+  transform: translateX(80%);
+}
+.btn:hover{
+  transform: translateX(80%);
 }
 .btn.flex {
   flex-direction: column;
