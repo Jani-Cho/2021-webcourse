@@ -68,7 +68,7 @@ strong {
   transform: translateX(80%);
 }
 .btn:hover{
-  transform: translateX(80%);
+  transform: translateX(0);
 }
 .btn.flex {
   flex-direction: column;
@@ -76,7 +76,7 @@ strong {
 
 .btn > a {
   text-decoration: none;
-  text-align: center;
+  text-align: left;
   color: #fff!IMPORTANT;
   background-color: #000;
   border-bottom: 1px solid #ddd;
